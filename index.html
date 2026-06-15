@@ -150,6 +150,19 @@
       padding: 3rem; text-align: center; font-size: 1.2rem; font-weight: 600;
       width: 100%; max-width: 380px;
     }
+    .hero-bg-image {
+      position: absolute; inset: 0; z-index: 0;
+      background-size: cover; background-position: center;
+    }
+    .hero-bg-overlay {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.85) 0%, rgba(var(--secondary-rgb), 0.7) 100%);
+    }
+    .hero-bg-image + .hero-bg-overlay + .hero-bg-animated { z-index: 1; }
+    .hero-image {
+      border-radius: var(--radius); box-shadow: var(--shadow-lg);
+      width: 100%; max-width: 500px; object-fit: cover; aspect-ratio: 4/3;
+    }
     .badge {
       display: inline-block; padding: 0.4rem 1rem; margin-bottom: 1.5rem;
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
@@ -247,6 +260,10 @@
       border-radius: var(--radius); border: var(--border);
       padding: 3rem; text-align: center; font-size: 1.15rem; font-weight: 600;
       width: 100%; max-width: 380px; box-shadow: var(--shadow-lg);
+    }
+    .about-image {
+      border-radius: var(--radius); box-shadow: var(--shadow-lg);
+      width: 100%; max-width: 500px; object-fit: cover; aspect-ratio: 4/3;
     }
 
     /* ========== HOW IT WORKS ========== */
@@ -395,6 +412,7 @@
       <nav>
         <a href="#features">Services</a>
 <a href="#how-it-works">Sådan</a>
+<a href="#about">Om os</a>
 <a href="#testimonials">Referencer</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Kontakt</a>
@@ -407,20 +425,24 @@
     
     <!-- ========== HERO ========== -->
     <section class="hero-section hero-left">
+      
+      <div class="hero-bg-image" style="background-image: url('images/Tagdækker/eric-aiden-o68QrmqrPm8-unsplash.jpg');"></div>
+      <div class="hero-bg-overlay"></div>
       <div class="hero-bg-animated"></div>
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
             <span class="badge">Storkøbenhavn siden 1994</span>
             <h1 style="background: linear-gradient(135deg, var(--text) 0%, var(--primary) 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Dit tag. Vores ekspertise. I 30 år.</h1>
-            <p class="subtitle">Vi har beskyttet danske huse mod vejr og vind i tre årtier. Fra reparation af lækker til komplet tagudskiftning — vi leverer håndværk der holder.</p>
+            <p class="subtitle">Vi har beskyttet danske huse mod vejr og vind i tre årtier. Fra reparation af lækker til komplet tagudskiftning.</p>
             <div class="hero-cta">
               <a href="#contact" class="btn-primary btn-pulse">Få gratis tilbud</a>
               <a href="#features" class="btn-secondary">Lær mere</a>
             </div>
           </div>
+          
           <div class="hero-visual">
-            <div class="hero-visual-card glass">30 år. 2.000+ tag. Ét hold.</div>
+            <img src="images/Tagdækker/victor-meza-ct64bWnHrNQ-unsplash.jpg" alt="Vores Tagdækker" class="hero-image" loading="lazy" />
           </div>
         </div>
       </div>
@@ -463,6 +485,22 @@
                 <h3>Garantiarbejde</h3>
                 <p>Vi står bag vores arbejde. Op til 10 års garanti på nyt tag.</p>
               </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section alt-surface" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2 class="section-title text-left">30 år med danske tage</h2>
+            <p class="about-text">Siden 1994 har vi beskyttet danske huse mod regn, sne og vind. Vi er et familiedrevet med høje standarder og lavt blik. Vi bruger de bedste materialer, og vi efterlader altid pladsener ordenligt. Når du til os, får du ikke bare et nyt — du får tryghed i mange år frem.</p>
+          </div>
+          
+          <div class="about-visual">
+            <img src="images/Tagdækker/sergej-karpow-zWL_sYw10gs-unsplash.jpg" alt="Vores Tagdækker" class="about-image" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
@@ -563,7 +601,6 @@
       </div>
     </section>
 
-
     <!-- ========== FAQ ========== -->
     <section class="section alt-surface" id="faq">
       <div class="container">
@@ -572,7 +609,7 @@
           
             <details>
               <summary><span>Hvor lang tid tager en komplet tagudskiftning?</span></summary>
-              <div class="faq-answer"><p>For en typisk villa tager det 3-5 arbejdsdage. Vi planlægger altid med dig, så du ved præcis hvornår vi starter og afslutter.</p></div>
+              <div class="faq-answer"><p>For en typisk villa tager det 3-5 arbejdsdage. Vi planlægger alt med dig, så du ved præcis hvornår vi starter og afslutter.</p></div>
             </details>
             <details>
               <summary><span>Tilbyder I gratis besigtigelse?</span></summary>
@@ -599,7 +636,7 @@
       <div class="container">
         <div class="contact-card glass">
           <h2>Ring i dag — så kigger vi på det</h2>
-          <p class="subtitle">Kontakt Vores Tagdækker for en uforpligtende samtale.</p>
+          <p class="subtitle">Gratis besigtigelse og uforpligtende tilbud. Vi dækker hele Storkøbenhavn.</p>
           <div class="contact-methods">
             <a href="mailto:info@vores-tagdaekker.dk" class="btn-primary">Få gratis tilbud</a><a href="tel:+45 38 12 34 56" class="btn-secondary">+45 38 12 34 56</a>
           </div>
@@ -615,7 +652,7 @@
       <div class="footer-inner">
         <div class="footer-logo">Vores Tagdækker</div>
         <div class="footer-links">
-          <a href="#features">Services</a><a href="#how-it-works">Sådan</a><a href="#testimonials">Referencer</a><a href="#faq">FAQ</a>
+          <a href="#features">Services</a><a href="#how-it-works">Sådan</a><a href="#about">Om os</a><a href="#testimonials">Referencer</a><a href="#faq">FAQ</a>
           <a href="mailto:info@vores-tagdaekker.dk">Email</a>
         </div>
       </div>
