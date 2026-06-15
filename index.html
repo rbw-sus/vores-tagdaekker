@@ -37,11 +37,11 @@
     /* ========== DESIGN TOKENS ========== */
     :root {
       --primary: #1b4332;
-      --primary-rgb: 27 67 50;
+      --primary-rgb: 27, 67, 50;
       --secondary: #2d6a4f;
-      --secondary-rgb: 45 106 79;
+      --secondary-rgb: 45, 106, 79;
       --accent: #d4a017;
-      --accent-rgb: 212 160 23;
+      --accent-rgb: 212, 160, 23;
       --text: #1a1a2e;
       --text-light: #5a6370;
       --bg: #ffffff;
@@ -156,7 +156,12 @@
     }
     .hero-bg-overlay {
       position: absolute; inset: 0; z-index: 0;
-      background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.85) 0%, rgba(var(--secondary-rgb), 0.7) 100%);
+      background: linear-gradient(135deg, rgba(27, 67, 50, 0.88) 0%, rgba(45, 106, 79, 0.72) 100%);
+    }
+    @supports not (background: rgba(var(--x), 0.5)) {
+      .hero-bg-overlay {
+        background: linear-gradient(135deg, rgba(27, 67, 50, 0.88) 0%, rgba(45, 106, 79, 0.72) 100%);
+      }
     }
     .hero-bg-image + .hero-bg-overlay + .hero-bg-animated { z-index: 1; }
     .hero-image {
